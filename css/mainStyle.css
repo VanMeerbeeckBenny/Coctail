@@ -10,13 +10,13 @@ figure,img{
 article{      
     font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(250, 245, 245);
+    background-color: rgb(255, 255, 255);
     border-radius: 25px;
     overflow:hidden;
     display:flex;
     border:2px solid black;    
     margin:10px;    
-    width:915px;
+    width:900px;
 }
 
 h3{
