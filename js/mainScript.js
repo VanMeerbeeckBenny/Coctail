@@ -40,8 +40,9 @@ function FillSelect(){
     selectDrink[selectDrink.length] = option
 
     data.forEach(drink => {  
-        let name = drink.strDrink;      
-        option = new Option(name,name);        
+        let name = drink.strDrink; 
+        let id = drink.idDrink;    
+        option = new Option(name,id);  //name = text ,id = value      
         selectDrink[selectDrink.length] = option               
         selectDrink.appendChild(option);
     });    
@@ -49,16 +50,17 @@ function FillSelect(){
 
 function ShowCoctailOnClick(){
     selectDrink.addEventListener("change",function(){
-        let value = this.value;
-        let coctail = GetDrinkByName(value); 
+        let id = this.value;
+        //let text = this[this.selectedIndex].text; het verkrijgen van de text(html)
+        let coctail = GetDrinkById(id); 
         console.log(coctail);       
     })
 }
 
-function GetDrinkByName(name){
+function GetDrinkById(id){
     let drink;
     data.forEach(coctail =>{
-        if (coctail.strDrink == name){
+        if (coctail.idDrink == id){
             drink =  coctail;
         }
     })
