@@ -14,7 +14,7 @@ function init(){
     
 
     FetchData();
-    
+    ShowCoctailOnClick();
 }
 
 
@@ -47,5 +47,21 @@ function FillSelect(){
     });    
 }
 
+function ShowCoctailOnClick(){
+    selectDrink.addEventListener("change",function(){
+        let value = this.value;
+        let coctail = GetDrinkByName(value); 
+        console.log(coctail);       
+    })
+}
 
+function GetDrinkByName(name){
+    let drink;
+    data.forEach(coctail =>{
+        if (coctail.strDrink == name){
+            drink =  coctail;
+        }
+    })
+    return drink
+}
 
