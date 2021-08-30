@@ -29,10 +29,23 @@ function FetchData(){
             }
         }
     ).then(output =>{
-        data = output.drinks;        
+        data = output.drinks;
+        FillSelect();
     })
 }
 
+function FillSelect(){
+    let option;
+    option = new Option();
+    selectDrink[selectDrink.length] = option
+
+    data.forEach(drink => {  
+        let name = drink.strDrink;      
+        option = new Option(name,name);        
+        selectDrink[selectDrink.length] = option               
+        selectDrink.appendChild(option);
+    });    
+}
 
 
 
