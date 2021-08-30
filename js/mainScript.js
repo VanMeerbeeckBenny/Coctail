@@ -55,18 +55,25 @@ function FillSelect(){
 
 function ShowCoctailOnClick(){
     selectDrink.addEventListener("change",function(){
+        ClearWrapper();
         let id = this.value;
         if(id == "all"){
             data.forEach(coctail =>{
                 CreateCard(coctail);  
             })
-        }else{
+        }else if(typeof this.value != "undefined" && this.value != ""){
             let coctail = GetDrinkById(id); 
             CreateCard(coctail);   
         }
         //let text = this[this.selectedIndex].text; het verkrijgen van de text(html)
         
     })
+}
+
+function ClearWrapper(){
+    while(mainParent.firstChild){
+        mainParent.removeChild(mainParent.firstChild)
+    }
 }
 
 function GetDrinkById(id){
